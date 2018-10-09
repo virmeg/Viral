@@ -22,3 +22,4 @@ SELECT * FROM EMP WHERE SAL BETWEEN '2000' and '4000';
 <=
 <> or !
 
+SELECT * FROM EMP WHERE SAL like '%300_%';
