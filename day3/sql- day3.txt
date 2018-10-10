@@ -157,9 +157,23 @@ select min(hire_Date), max (hire_date) from Employees ;
  select Select manager_id, count(manager_id) from employees group by manager_id; 
  
  
- List all Employees earning more Salary than average salarfy of IT DEPARTMENT;
+ List all Employees earning more Salary than average salarfy of IT DEPARTMENT; ---SUBQUERY
  
  select last_name from employees where salary> 
  (Select avg(salary) from Employees where 
  department_id in (select department_id from departments where department_name='IT'));
 
+ANY AND ALL
+
+SELECT LAST_NAME, SALARY FROM employees WHERE SALARY > ANY (3999, 5000)
+SELECT LAST_NAME, SALARY FROM employees WHERE SALARY > ALL (3999, 5000)
+SELECT LAST_NAME, SALARY FROM employees WHERE SALARY >  (3999, 5000)
+
+X> ANY(Y,Z)
+X>Y OR X>Z
+
+X> ALL(Y,Z)
+X>Y AND X>Z
+
+X IN (Y,Z)
+X=Z OR X=Y
