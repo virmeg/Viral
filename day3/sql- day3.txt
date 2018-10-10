@@ -118,19 +118,34 @@ select ename, dname from Emp e full join dept c using (deptno)
 
 
 
+
+
+select * from tab;
+
 join from 3 tables
 
-select first_name, department_name, city from employees e JOIN departments d
-USING (department_id) join LOCATIONS using (location_id);
-    
-formula:   ((((a+b)+c))+d)+e)
-
-
-
-
-select first_name, department_name, city from employees e 
+ select first_name, department_name, city from employees e 
  JOIN departments d USING (department_id)
+ 
  join LOCATIONS using (location_id) 
  join countries using (country_id)
  join regions using (region_id);
+    
+   ((((a+b)+c))+d)+e)
  
+ select first_name, department_name from employees e JOIN departments d on (e.department_id=d.department_id);
+ 
+ cross join
+ select * from employees e cross join departments d;  
+ 
+ natural join- db will decide and join baseds on common column name
+ select * from employees e natural join departments d;  
+
+
+select first_name, salary, job_title, job_id, min_salary, max_salary from  employees e join jobs using (job_id) order by Min_salary desc;
+  select first_name, salary, job_title, job_id, min_salary+max_salary/2 as Avg_salary from  employees e join jobs using (job_id) order by Min_salary desc;
+ 
+ 
+ group by
+ select department_id, avg (salary) from  employees group by department_id
+
