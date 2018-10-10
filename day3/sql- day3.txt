@@ -125,3 +125,8 @@ USING (department_id) join LOCATIONS using (location_id);
     
 formula:   ((((a+b)+c))+d)+e)
 
+
+
+
+ select first_name, department_name, city from employees e JOIN departments d
+    USING (department_id) join LOCATIONS using (location_id) join countries using (country_id) join regions using (region_id);
