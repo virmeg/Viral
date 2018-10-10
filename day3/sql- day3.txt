@@ -82,5 +82,36 @@ SELECT HIREDATE, ROUND(HIREDATE,'YEAR') FROM EMP; -ROUND UP OF DATE
 SELECT ename, HIREDATE, ADD_MONTHS (HIREDATE, '36') AS END_DATE FROM emp order by end_date desc;
 select ename, sal, nvl(comm,0), sal+nvl(comm,0) as Net_Income from emp;
 
+analytical 
+
+select ename, sal, dense_rank() over (order by sal desc) as ERANK from emp;
+
 general and condition
 
+
+join
+
+equi joiin
+
+select * from dept, emp where emp.deptno=dept.deptno;
+or
+select ename, dname from emp e join dept d on (e.deptno=d.deptno)
+
+non  equi join
+select ename, grade from emp e, salgrade s where e.sal between s.losal to s.hisal;
+
+
+inner join
+select * from emp e, dept d where e.deptno(+)=d.deptno;
+select ename, dname from Emp e join dept c using (deptno)
+
+Outer join
+Left outer join
+select ename, dname from Emp e left join dept c using (deptno)
+Right outer join
+
+select ename, dname from Emp e right join dept c using (deptno)
+select * from emp e, dept d where e.deptno=d.deptno(+);
+
+Full outer join
+select ename, dname from Emp e full join dept c using (deptno)
