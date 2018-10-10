@@ -177,3 +177,39 @@ X>Y AND X>Z
 
 X IN (Y,Z)
 X=Z OR X=Y
+
+
+Union
+
+ 
+a,b,c,d
+union
+a,b,c,d,x,y
+--a,b,c,d,x,y
+
+a,b,c,d
+union all
+a,b,c,d,x,y
+--a,a, b,b,c, c,d, d,x,y
+
+
+a,b,c,d
+minus
+b,c,x,y
+--a,d
+
+
+SELECT EMPLOYEE_ID FROM eMPLOYEES
+MINUS
+SELECT EMPLOYEE_ID FROM JOB_HISTORY
+
+a,b,c,d
+intersect
+b,c,x,y
+--b,c
+
+Union  
+SELECT EMPLOYEE_ID FROM eMPLOYEES
+Intersect
+SELECT EMPLOYEE_ID FROM JOB_HISTORY
+   
