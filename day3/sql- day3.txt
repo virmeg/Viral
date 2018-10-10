@@ -213,3 +213,23 @@ SELECT EMPLOYEE_ID FROM eMPLOYEES
 Intersect
 SELECT EMPLOYEE_ID FROM JOB_HISTORY
    
+   
+   
+   
+ DDL AND DML
+ 
+ create table books (bookid number(4) primary key,
+title varchar (30) not null,
+author varchar (20) default 'Anonymous'
+);
+
+Insert into books (bookid, title) values (101, 'Head first Java');
+Insert into books (bookid, title) values (102, 'Head first python');
+
+COMMIT;
+update books set author='Viral' where bookid=101;
+COMMIT;
+
+select * from books;
+drop table books;
+
