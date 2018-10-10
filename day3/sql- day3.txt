@@ -149,3 +149,17 @@ select first_name, salary, job_title, job_id, min_salary, max_salary from  emplo
  group by
  select department_id, avg (salary) from  employees group by department_id
 
+
+select min(hire_Date), max (hire_date) from Employees ;
+ select department_id, min(hire_Date), max (hire_date) from Employees group by department_id;
+ 
+ Select department_id, count(department_id) from employees group by department_id;
+ select Select manager_id, count(manager_id) from employees group by manager_id; 
+ 
+ 
+ List all Employees earning more Salary than average salarfy of IT DEPARTMENT;
+ 
+ select last_name from employees where salary> 
+ (Select avg(salary) from Employees where 
+ department_id in (select department_id from departments where department_name='IT'));
+
