@@ -108,10 +108,20 @@ select ename, dname from Emp e join dept c using (deptno)
 Outer join
 Left outer join
 select ename, dname from Emp e left join dept c using (deptno)
-Right outer join
 
+Right outer join
 select ename, dname from Emp e right join dept c using (deptno)
 select * from emp e, dept d where e.deptno=d.deptno(+);
 
 Full outer join
 select ename, dname from Emp e full join dept c using (deptno)
+
+
+
+join from 3 tables
+
+select first_name, department_name, city from employees e JOIN departments d
+USING (department_id) join LOCATIONS using (location_id);
+    
+formula:   ((((a+b)+c))+d)+e)
+
