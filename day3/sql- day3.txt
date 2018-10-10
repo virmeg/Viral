@@ -1,0 +1,28 @@
+multi colum sorting
+
+select * from Emp order by Deptno asc, job desc;
+
+
+
+
+
+select to_char (sysdate,'DD-MONTH-YYYY') FROM dual;
+select to_char (TO_DATE('24-jul-2014', 'DD-MON-RRRR')) FROM dual;
+select to_char (sysdate,'DDspth " Day of " MMspth " Month of " YEAR') FROM dual;
+
+DD- Day of month
+MM- Month (Number)
+MON- Month (first 3 characters)
+Month- Full spelling
+YYYY- Year in 4 digits
+YEAR- Year in words
+
+hh- hours
+mm-minutes
+ss- seconds
+
+select sysdate from dual;
+
+select * from Emp where to_char(hiredate,'MM')=09;
+select * from Emp where to_char(hiredate,'YYYY') BETWEEN 1981 AND 1982 ORDER BY HIREDATE DESC;
+select ename, to_char(hiredate, 'MONTH YY') AS "Joining Month" from emp;
