@@ -29,6 +29,58 @@ select to_number('5,400','9,999.00') from dual;
 
 single row function
 select upper (ename) from emp;
+select * from Emp order by Deptno asc, job desc;
+
+
+select to_char (sysdate,'DD-MONTH-YYYY') FROM dual;
+select to_char (TO_DATE('24-jul-2014', 'DD-MON-RRRR')) FROM dual;
+select to_char (sysdate,'DDspth " Day of " MMspth " Month of " YEAR') FROM dual;
+
+DD- Day of month
+MM- Month (Number)
+MON- Month (first 3 characters)
+Month- Full spelling
+YYYY- Year in 4 digits
+YEAR- Year in words
+
+hh- hours
+mm-minutes
+ss- seconds
+
+select sysdate from dual;
+
+select * from Emp where to_char(hiredate,'MM')=09;
+select * from Emp where to_char(hiredate,'YYYY') BETWEEN 1981 AND 1982 ORDER BY HIREDATE DESC;
+select ename, to_char(hiredate, 'MONTH YY') AS "Joining Month" from emp;
+select ename, sal from emp where to_number ('1,400', '9,000')<sal;
+
+select to_char(5400,'$9,999.00') from dual;
+select to_number('5,400','9,999.00') from dual;
+
+
+single row function
+select upper (ename) from emp;
+select ename, rpad(sal, 10, '*') from emp;
+select ename, lpad(sal, 10, '*') from emp;
+select Initcap(ename), lpad(sal, 10, '*') from emp;
+
 
 multiple row function\
 select count (*) from emp;
+select sum (sal) from emp;
+select min (sal), max (sal) from emp;
+select least (sal), max (sal) from emp;
+select initcap (concat(concat(ename,' ')), job)) from Emp;
+multiple row function
+select count (*) from emp;
+
+number function
+
+
+Date function
+SELECT HIREDATE, ROUND(HIREDATE,'YEAR') FROM EMP; -ROUND UP OF DATE
+SELECT ename, HIREDATE, ADD_MONTHS (HIREDATE, '36') AS END_DATE FROM emp order by end_date desc;
+select ename, sal, nvl(comm,0), sal+nvl(comm,0) as Net_Income from emp;
+
+general and condition
+
