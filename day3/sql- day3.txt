@@ -1,9 +1,4 @@
-multi colum sorting
-
 select * from Emp order by Deptno asc, job desc;
-
-
-
 
 
 select to_char (sysdate,'DD-MONTH-YYYY') FROM dual;
@@ -26,3 +21,14 @@ select sysdate from dual;
 select * from Emp where to_char(hiredate,'MM')=09;
 select * from Emp where to_char(hiredate,'YYYY') BETWEEN 1981 AND 1982 ORDER BY HIREDATE DESC;
 select ename, to_char(hiredate, 'MONTH YY') AS "Joining Month" from emp;
+select ename, sal from emp where to_number ('1,400', '9,000')<sal;
+
+select to_char(5400,'$9,999.00') from dual;
+select to_number('5,400','9,999.00') from dual;
+
+
+single row function
+select upper (ename) from emp;
+
+multiple row function\
+select count (*) from emp;
