@@ -1,0 +1,34 @@
+stored procedures
+
+
+
+
+
+CREATE PROCEDURE TEST_PROCEDURE AS 
+BEGIN
+ update locations
+   set city='Mumbai'
+   where postal_code='400059';
+END;
+
+
+
+ unnamed procedure
+BEGIN
+ update locations
+   set city='Mumbai'
+   where postal_code='400059'
+
+--Turn on output statements
+
+set serveroutput on
+
+-sample stored procedure to Display message
+begin
+dbms_output.put_line('HEllo world');
+end;
+
+
+exec dbms_output.put_line('HEllo world');
+
+call dbms_output.put_line('HEllo world');
