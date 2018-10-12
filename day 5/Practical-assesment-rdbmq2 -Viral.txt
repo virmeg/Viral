@@ -1,0 +1,51 @@
+RDBMS:								30 Marks
+Q1.  Write SQL Query to create following tables [DO NOT CREATE PRIMARY / FOREIGN KEYS ]
+Customer:	CustomerId, Fullname, address, city, pan number
+Account:	accountNo, accType, balance, customerId
+Q2.  Write SQL to insert following records in Customer & Account tables:
+C1002	Rajiv Bhatia	Xyz Path, Chandni chowk	Delhi	AXNSS 1234 A
+C1003	Alia Bhatt	Khar	Mumbai	SZAXS 5656 B
+C1004	Vijay Deol	Bandra	Mumbai	APOI 5675 A
+C1005	Ajay Deol	Bandra	Mumbai	AUIO 7676 K
+					
+SB122666	Savings	67000	C1002
+CB565556	Current	786928.98	C1002
+SB876565	Savings	547899.90	C1004
+SB565722	Savings	67600	C1003
+SB757676	Savings	66197.88	C1003
+SB166778	Current	16000	C1008
+
+Q3.  Write a Left Join to get all customers and accounts. Join should display all customers [Even those who DO NOT have any account].
+
+
+
+create table Customer (CustomerId varchar(5),
+Fullname varchar (30),
+address varchar (20),
+city varchar (10),
+pan_number varchar (10)
+);
+
+create table Account (accountNo varchar(5),
+accType varchar (30),
+address varchar (20),
+balance float (10),
+customerId varchar (5)
+);
+
+insert into Customer Values ('C1002','Rajiv Bhatia','Xyz Path, Chandni chowk','Delhi','AXNSS 1234 A');
+insert into Customer Values ('C1003','Alia Bhatt','Khar','Mumbai','SZAXS 5656 B');
+insert into Customer Values ('C1004','Vijay Deol','Bandra','Mumbai','APOI 5675 A');
+
+
+insert into Account Values ('SB122666','Savings','67000','C1002');
+insert into Account Values ('CB5655566','Current','786928.98','C1002');
+insert into Account Values ('SB876565','Savings','547899.90','C1004');
+insert into Account Values ('SB565722','Savings','67600','C1003');
+insert into Account Values ('SB757676','Savings','66197.88','C1003');
+insert into Account Values ('SB166778','Current','16000','C1008');
+
+
+
+
+select * from Customer left join Account using (CUSTOMERID);

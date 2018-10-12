@@ -108,10 +108,11 @@ select ename, dname from Emp e join dept c using (deptno)
 Outer join
 Left outer join
 select ename, dname from Emp e left join dept c using (deptno)
+select * from emp e, dept d where e.deptno=d.deptno(+);
 
 Right outer join
 select ename, dname from Emp e right join dept c using (deptno)
-select * from emp e, dept d where e.deptno=d.deptno(+);
+select * from emp e, dept d where e.deptno(+)=deptno;
 
 Full outer join
 select ename, dname from Emp e full join dept c using (deptno)
