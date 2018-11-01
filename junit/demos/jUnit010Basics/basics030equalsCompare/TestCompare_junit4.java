@@ -6,54 +6,31 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestCompare_junit4 {
-	private Book book1;
+	private salary;
 	private Book book2;
 	private Book book3;
 	private Book book4;
 	
 	@Before
-	public void initBeforeTest() throws Exception {
+	public void initBeforeTest() throws Exception 
+	{
 		System.out.println("\tRun initBeforeTest()");
-		book1 = new Book(50, "Java Programmiing", 400);
-		book2 = new Book(100, "Java Programmiing", 400);
-		book3 = new Book(100, "Java Programmiing", 400);
-		book4 = new Book(200, "ServletJSP", 600);
+		int salary=350000;
+		double tax_rate=0.085		
 	}
-
+	
 	@After
 	public void cleanAfterTest() throws Exception {
-		book1 = null;
-		book2 = null;
-		book3 = null;
-		book4 = null;
+	System.out.println("\tRun initBeforeTest()");
+	int salary=null;
+	double tax_rate=null;
 	}
 
 	@Test
-	public void compareLessThanTrue() {
-		Assert.assertTrue(book1.compareTo(book2)<0);
+	public void testAdd1() {	
+		SalaryCalculator sc = new SalaryCalculator();
+		double salarytax = sc.calcTax(salary,tax_rate);
+		assertEquals(4250, salarytax, 0);
 	}
 	
-	@Test
-	public void compareLessThanFalse() {
-		Assert.assertFalse(book2.compareTo(book1)<0);
-	}
-	
-	@Test
-	public void compareEqualityTrue() {	
-		Assert.assertTrue(book2.compareTo(book3)==0);
-	}
-	
-	@Test
-	public void compareEqualityFalse() {	
-		Assert.assertFalse(book2.compareTo(book4)==0);
-	}
-	
-	public void compareGreaterThanTrue() {
-		Assert.assertTrue(book4.compareTo(book3)>0);
-	}
-	
-	@Test
-	public void compareGreaterThanFalse() {
-		Assert.assertFalse(book3.compareTo(book4)>0);
-	}
 }
