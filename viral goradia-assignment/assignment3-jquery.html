@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title> jquery demo</title>
+
+    <script src="jquery/scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+
+
+
+</head>
+
+<body>
+    <p style="position:relative" id="para">This is j query</p>
+    <button id="Show">Show</button>
+    <button id="Hide">Hide</button>
+    <button id="Tgs">Toogle show/hde</button>
+    <button id="sr">Slide Right</button>
+    <button id="sl">Slide Left</button>
+    <button id="fi">Fade in</button>
+    <button id="fo">Fade out</button>
+    <button id="su">Slide up</button>
+    <button id="sd">Slide down</button>
+    <button id="an">Animate</button>
+    <button id="rs">Reset</button>
+
+
+    <script type="text/javascript">
+        //jquesry object to ve used to manipulate the DOM
+        $(document).ready(function () {
+            $("button#show").click(function () {
+                $("p#para").show();
+
+
+            });
+        });
+
+        $(document).ready(function () {
+            $("button#hide").click(function () {
+                $("p#para").hide();
+
+
+            });
+        });
+
+        $(document).ready(function () {
+            $("button#Tgs").click(function () {
+                $("p").toggle();
+            });
+        });
+
+        $(document).ready(function () {
+            $("button#sl").click(function () {
+                $("p").animate({ left: "-=200px" });
+            });
+        });
+        $(document).ready(function () {
+            $("button#sr").click(function () {
+                $("p").animate({ left: "+=200px" });
+            });
+        });
+        $(document).ready(function () {
+            $("button#fi").click(function () {
+                $("p").fadeIn();
+            });
+        });
+        $(document).ready(function () {
+            $("button#fo").click(function () {
+                $("p").fadeOut();
+            });
+        });
+
+        $(document).ready(function () {
+            $("button#su").click(function () {
+                $("p").slideUp();
+            });
+        });
+        $(document).ready(function () {
+            $("button#sd").click(function () {
+                $("p").slideDown();
+            });
+        });
+
+        $(document).ready(function () {
+            $("button#an").click(function () {
+                $("p").animate({ left: "+=200px", opacity: "0.2", width: "-=50px", fontSize: "+=1em" });
+            });
+        });
+
+        $(document).ready(function () {
+            $("button#rs").click(function () {
+                location.reload()
+            });
+        }); 
+    </script>
+</body>
+
+</html>

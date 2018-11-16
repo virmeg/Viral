@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title> jquery demo</title>
+
+<script src="jquery/scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+         
+    
+
+    </head>
+
+    <body>
+            <p id="para">This is j query</p>
+            <p class="para1">This is j query2</p>
+            <button>Click me</button>
+            <script type="text/javascript">
+                //jquesry object to ve used to manipulate the DOM
+                $(document).ready(function()
+                {
+                    $("button").click(function()
+                    {
+                        $("p#para").hide();
+                        $("p.para1").hide();
+
+                    });
+                });
+                
+                </script>
+    </body>
+</html>

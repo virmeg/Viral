@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            Arraydemo
+        </title>
+    </head>
+    <body>
+    <script type="text/javascript">
+    var arr=new Array("Rashmi", "Parth", "Anushka");
+    document.write(arr.length + "<br/>");
+    var arrjoin=arr.join(",");
+    document.write("Array Join")
+    document.write("<br>");
+    document.write(arrjoin);
+document.write("<br>");
+document.write("<br>");
+
+    var arrslice=arr.slice(0,-3); 
+    document.write("Array slice")
+    document.write("<br>");
+
+    document.write(arrslice);
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("Array concat");
+    document.write("<br>");
+
+    var arrcon=arr.concat(arrslice); 
+    document.write(arrcon);
+    document.write("<br>");
+
+    document.write("<br>");
+
+var arrsort=arr.sort();
+document.write("Array sort");
+    document.write("<br>");
+document.write(arrsort);
+document.write("<br>");
+document.write("Array reverse");
+    document.write("<br>");
+var arrrev=arr.reverse();
+document.write(arrrev);
+    </script>
+
+    </body>
+</html>
+
+        
